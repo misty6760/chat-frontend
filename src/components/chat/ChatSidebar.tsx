@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sidebar";
 import ChatRoomList from "./ChatRoomList";
 import ChatUserPanel from "./ChatUserPanel";
-import NewChatDialog from "./NewChatdialog";
+import NewChatDialog from "./NewChatDialog";
 
 interface ChatSideBarProps {
   title: string;

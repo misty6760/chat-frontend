@@ -2,7 +2,9 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
-import AuthLayout from "./components/layouts/AuthLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import ChatLayout from "./layouts/ChatLayout";
+import Chat from "./pages/Chat";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -31,11 +33,12 @@ const App = () => {
         {
           path: "chat",
           element: (
-            <div>
-              Chat Layout <Outlet />
-            </div>
+            <ChatLayout>
+              <Outlet />
+            </ChatLayout>
           ),
           children: [
+            { index: true, element: <Chat /> },
             {
               path: "rooms",
               element: <div>Chat Rooms Page</div>,
