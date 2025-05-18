@@ -1,5 +1,4 @@
 import { BadgeCheck, ChevronsUpDown, LogOut } from "lucide-react";
-
 import { Avatar, AvatarFallback, } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -15,6 +14,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { logout } from "@/services/auth.service";
+import { useNavigate } from "react-router";
 
 interface ChatUserPanelProps {
   nickname: string;
@@ -23,6 +24,7 @@ interface ChatUserPanelProps {
 
 const ChatUserPanel = ({ nickname, username }: ChatUserPanelProps) => {
   const { isMobile } = useSidebar();
+  const navigate = useNavigate();
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -70,7 +72,12 @@ const ChatUserPanel = ({ nickname, username }: ChatUserPanelProps) => {
               <BadgeCheck />
               Account
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() => {
+                logout();
+                navigate("/auth/login");
+              }}
+            >
               <LogOut />
               Log out
             </DropdownMenuItem>
