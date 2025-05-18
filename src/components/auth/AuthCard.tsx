@@ -1,17 +1,10 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface AuthFormCardProps {
   title: string;
   description: string;
   children: React.ReactNode;
 }
-
 const AuthFormCard = ({ children, title, description }: AuthFormCardProps) => {
   return (
     <div className="flex flex-col gap-6">
