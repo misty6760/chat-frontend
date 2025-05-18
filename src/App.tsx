@@ -8,10 +8,21 @@ const App = () => {
     {
       path: "/",
       element: (
-        <div>Root Layout<Outlet /></div>
+        <div>
+          Root Layout
+          <Outlet />
+        </div>
       ),
       children: [
-        { index: true, element: <div> <Home /> </div> },
+        {
+          index: true,
+          element: (
+            <div>
+              {" "}
+              <Home />{" "}
+            </div>
+          ),
+        },
         {
           path: "auth",
           children: [
@@ -28,7 +39,9 @@ const App = () => {
         {
           path: "chat",
           element: (
-            <div>Chat Layout <Outlet /></div>
+            <div>
+              Chat Layout <Outlet />
+            </div>
           ),
           children: [
             {
