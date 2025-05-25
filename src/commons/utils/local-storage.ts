@@ -11,7 +11,7 @@ export const localStorageUtil = {
   getItem: <T>(key: string): T | null => {
     try {
       const json = localStorage.getItem(key);
-            if (!json) return null;
+      if (!json) return null;
       return JSON.parse(json) as T;
     } catch (err) {
       console.error(`Error parsing "${key}" from localStorage`, err);
@@ -27,4 +27,3 @@ export const localStorageUtil = {
     localStorage.clear();
   },
 };
-

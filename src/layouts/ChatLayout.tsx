@@ -1,4 +1,4 @@
-import ChatSideBar from "@/components/chat/ChatSidebar";
+import ChatSideBar from "@/components/chat/ChatSideBar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import type { ReactNode } from "react";
 

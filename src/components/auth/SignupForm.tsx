@@ -12,19 +12,21 @@ const SignupForm = () => {
   const [repeatPassword, setRepeatPassword] = useState("");
   const navigate = useNavigate();
 
+  // useCallback은 함수를 메모이제이션하여, 의존성 배열에 나열된 값이 변경될 때만 함수를 재생성한다.
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
-      e.preventDefault();
+      e.preventDefault(); // 폼 제출 시 기본 동작인 페이지 새로고침을 방지
 
-      if(password !== repeatPassword) {
-        alert("Passwords do not match");
+      if (password !== repeatPassword) {
+        alert("Passwords do not match.");
         return;
       }
 
+      // 로그인 API 호출, username과 password를 전달
       signup(
         { username, password, nickname },
         () => {
-          alert("정상적으로 회원가입이 완료되었습니다.");
+          alert("정상적으로 회원가입 되었습니다.");
           navigate("/auth/login");
         },
         ({ message }) => {
@@ -32,6 +34,7 @@ const SignupForm = () => {
         },
       );
     },
+    // useCallback 훅의 의존성 배열, username과 password 값이 변경될 때마다 함수 재생성
     [username, password, nickname],
   );
   return (

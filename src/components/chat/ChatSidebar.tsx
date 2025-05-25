@@ -48,7 +48,7 @@ const ChatSideBar = ({ title }: ChatSideBarProps) => {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <ChatRoomList/>
+        <ChatRoomList />
       </SidebarContent>
       <SidebarFooter>
         <ChatUserPanel nickname={"Nextop"} username={"hello@world.com"} />
